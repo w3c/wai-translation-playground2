@@ -78,6 +78,7 @@
   {%- endif -%}
   {%- if forloop.last %}</ul></nav>{% endif -%}
 {%- endfor -%}
+{% comment %}
 {% if page.ref %}
   {% assign pages=site.documents | where:"ref", page.ref | where_exp:"item", "item.lang != 'en'" | sort: 'lang' %}
   {%- for p in pages %}
@@ -96,4 +97,5 @@
     {%- endif -%}
   {% endfor -%}
 {% endif %}
+{% endcomment %}
 </div>
